@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{background-image:url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffh260%2Fbackground%2F20200703%2Fpngtree-mathematics-education-calculator-ruler-hand-drawn-background-image_340649.jpg&tbnid=D6bNe7eJh5PzxM&vet=12ahUKEwjj19WarOSDAxXNnmMGHaJQAogQMygAegQIARBQ..i&imgrefurl=https%3A%2F%2Fpngtree.com%2Ffree-backgrounds-photos%2Fcalculator&docid=2mE7ph88ETLuyM&w=555&h=260&q=background%20image%20for%20calculator%20website&ved=2ahUKEwjj19WarOSDAxXNnmMGHaJQAogQMygAegQIARBQ');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+
+        }
+    </style>
+    <link rel="stylesheet" href="calc.css"> 
+</head>
+<body>
+    <h2>Calculator</h2>
+    <form id="calculatorForm">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" name="num1" required>
+
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" name="num2" required>
+
+        <br>
+
+        <button type="button" onclick="calculate('+')">Add</button>
+        <button type="button" onclick="calculate('-')">Subtract</button>
+        <button type="button" onclick="calculate('*')">Multiply</button>
+        <button type="button" onclick="calculate('/')">Divide</button>
+
+        <br>
+
+        <label for="result">Result:</label>
+        <input type="text" id="result" name="result" readonly>
+    </form>
+
+    <script>
+        function calculate(operator) {
+        var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result;
+
+         switch (operator) {
+            case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+            case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num2 !== 0 ? num1 / num2 : 'Cannot divide by zero';
+                 break;
+   default:
+result = 'Invalid operator';
+}
+
+ document.getElementById('result').value = result;
+}
+ </script>
+</body>
+</html>
